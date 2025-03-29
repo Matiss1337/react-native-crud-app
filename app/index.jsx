@@ -5,9 +5,21 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import { data } from "@/data/todos"
 
+import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
+
 export default function Index() {
     const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id))
     const [text, setText] = useState('')
+
+    const [loaded, error] = useFonts({
+        Inter: Inter_500Medium,
+    })
+    // apply font to loaded and error
+
+    if (!loaded && !error) {
+        return null
+    }
+    // loads app only after font is loaded to prevent CLS etc
 
     const addTodo = () => {
         if (text.trim()) {
@@ -87,6 +99,7 @@ const styles = StyleSheet.create({
         padding: 10,
         marginRight: 10,
         fontSize: 18,
+        fontFamily: 'Inter_500Medium',
         minWidth: 0,
         color: 'white',
     },
@@ -116,6 +129,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 18,
         color: 'white',
+        fontFamily: 'Inter_500Medium',
     },
     completedText: {
         textDecorationLine: 'line-through',
