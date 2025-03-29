@@ -1,42 +1,74 @@
-# Welcome to your Expo app 👋
+# Todo App (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple todo application built with React Native, Expo Router, and theme support.
 
-## Get started
+## Features
+
+- Add, toggle, and delete todos
+- Dark/Light theme support
+- Safe area handling for different devices
+- Stack-based navigation
+- Custom font integration (Inter Medium)
+- Persistent storage for todos
+
+## Project Structure
+
+- `app/`
+   - `_layout.jsx` - Root layout with navigation and providers
+   - `index.jsx` - Main todo list screen
+- `context/`
+   - `ThemeContext.js` - Theme management
+- `constants/`
+   - `Colors.ts` - Theme color definitions
+- `data/`
+   - `todos.js` - Initial todo data
+
+## Navigation
+
+Uses Expo Router with Stack navigation:
+- Single stack implementation for simple todo list flow
+- Index screen configured without header
+- Ready for additional screens (e.g., todo details)
+
+## Theming
+
+Implements a theme system with:
+- Auto-detection of device theme
+- Support for light/dark modes
+- Context-based theme provider
+- Consistent color scheme across the app
+
+## Storage
+
+Uses AsyncStorage for persistent data:
+- Todos are saved locally on the device
+- Data persists between app restarts
+- Automatic loading of saved todos on app launch
+
+## Styling
+
+- Custom styles using StyleSheet
+- Responsive layout with max-width constraints
+- Safe area handling
+- Inter Medium font integration
+
+## Tech Stack
+
+- React Native
+- Expo
+- TypeScript (partial)
+- expo-router
+- react-native-safe-area-context
+- @expo-google-fonts/inter
+- @react-native-async-storage/async-storage
+
+## Getting Started
 
 1. Install dependencies
-
    ```bash
    npm install
-   ```
 
 2. Start the app
-
    ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   npx expo start
+   
