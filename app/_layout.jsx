@@ -11,9 +11,11 @@ export default function RootLayout() {
             {/* SafeAreaProvider: Ensures content is displayed within safe boundaries */}
             <SafeAreaProvider>
                 {/* Stack: Handles navigation and screen transitions */}
-                <Stack>
+                <Stack screenOptions={{headerShown: false}}>
                     {/* Define the initial screen with no header */}
-                    <Stack.Screen name="index" options={{ headerShown: false }} />
+                    <Stack.Screen name="index"/>
+                    <Stack.Screen name="todos/[id]" options={{ title: 'Todo Details' }} />
+                    {/*dynamic routing*/}
                 </Stack>
             </SafeAreaProvider>
         </ThemeProvider>
