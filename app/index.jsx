@@ -120,6 +120,7 @@ export default function Index() {
                 // closes keyboard input on drag
             />
             <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
+            {/*this is the batery, wifi etc*/}
         </SafeAreaView>
     );
 }
