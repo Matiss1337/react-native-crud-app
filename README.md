@@ -71,4 +71,31 @@ Uses AsyncStorage for persistent data:
 2. Start the app
    ```bash
    npx expo start
-   
+
+
+add
+/ios
+/android
+in gitignore
+
+# Check the version of the EAS CLI installed on your system
+eas -v
+
+# Log in to your EAS account
+eas login
+
+# Display the currently logged-in EAS user
+eas whoami
+
+# Initialize a new EAS project or link an existing one
+eas init
+
+# Configure your project for EAS Build, setting up necessary files and settings
+eas build:configure
+
+# Check for and install any necessary updates to Expo dependencies
+npx expo install --check
+
+
+# Build the project for Android using the development profile
+eas build --profile development --platform android
